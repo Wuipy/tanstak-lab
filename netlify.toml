@@ -4,9 +4,16 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  VITE_API_URL = "https://lab5progra4.runasp.net"
+  VITE_API_URL = "/api"
 
-# SPA: rutas de React Router / TanStack Router
+# Proxy API al Backend HTTP (evita mixed content HTTPS → HTTP)
+[[redirects]]
+  from = "/api/*"
+  to = "http://lab5progra4.runasp.net/:splat"
+  status = 200
+  force = true
+
+# SPA: rutas del Frontend
 [[redirects]]
   from = "/*"
   to = "/index.html"

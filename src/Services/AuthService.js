@@ -1,10 +1,11 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
-// Frontend Netlify: https://tanstak-lab.netlify.app
-// API Backend: https://lab5progra4.runasp.net
+// Producción (Netlify): /api → proxy a http://lab5progra4.runasp.net
+// Desarrollo local: http://localhost:5219
 export const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "https://lab5progra4.runasp.net";
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.DEV ? "http://localhost:5219" : "/api");
 
 export const client = axios.create({
   baseURL: API_BASE_URL,
