@@ -1,10 +1,10 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
-// Cambia esta URL según el puerto de tu Backend (ver launchSettings.json del proyecto C#).
-// HTTP: http://localhost:5219  |  HTTPS: https://localhost:7098
+// Frontend Netlify: https://tanstak-lab.netlify.app
+// API Backend: https://lab5progra4.runasp.net
 export const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5219";
+  import.meta.env.VITE_API_URL || "https://lab5progra4.runasp.net";
 
 export const client = axios.create({
   baseURL: API_BASE_URL,
